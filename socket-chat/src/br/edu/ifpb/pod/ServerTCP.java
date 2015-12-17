@@ -66,9 +66,12 @@ public class ServerTCP extends Thread {
                 // A chave sera o nome e valor o printstream
                 clientesMap.put(this.nomeCliente, saida);
                 if (clientesMap != null && !clientesMap.isEmpty()) {
+                	saida.println(nomeCliente.toUpperCase()+ " seja bem-vindo!");
                     for (Map.Entry<String, PrintStream> cliente : clientesMap.entrySet()) {
                         PrintStream chat = cliente.getValue();
-                        chat.println(nomeCliente.toUpperCase() + " conectou ao chat, seja bem-vindo!");
+                        if (chat != saida) {
+                        	chat.println(nomeCliente.toUpperCase() + " conectou ao chat!");
+						}
                     }
                 }
             }
