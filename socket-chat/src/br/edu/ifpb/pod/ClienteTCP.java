@@ -27,7 +27,7 @@ public class ClienteTCP extends Thread {
             String meuNome = teclado.readLine();
             
             //envia o nome digitado para o servidor
-            saida.println(meuNome);
+            saida.println(meuNome.toUpperCase());
             
             //instancia a thread para ip e porta conectados e depois inicia ela
             Thread thread = new ClienteTCP(socket);

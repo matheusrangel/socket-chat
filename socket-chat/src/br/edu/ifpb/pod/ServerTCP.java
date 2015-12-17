@@ -102,7 +102,7 @@ public class ServerTCP extends Thread {
                     	if (cmd.length == 2) {
                     		rename(saida, cmd);
 						} else {
-							saida.println("Comando invalido");
+							saida.println("Comando invalido!");
 						}
                         break;
                     default:
@@ -145,12 +145,12 @@ public class ServerTCP extends Thread {
                         count++;
                     }
                 } else {
-                    saida.println("Comando inválido!");
+                    saida.println("Comando invalido!");
                 }
             }
         }  
         if(count == clientesMap.size()) {
-            saida.println("O usuário "+msg[2]+" não existe!");
+            saida.println("O usuario "+msg[2]+" nao existe!");
         }
     }
    
@@ -159,7 +159,7 @@ public class ServerTCP extends Thread {
         String novoNome = msg[1];
         String nomeAntigo = nomeCliente;
         if (armazena(novoNome)) {
-            saida.println("Usuário já cadastrado, tente novamente!!");
+            saida.println("Usuario ja cadastrado, tente novamente!!");
         } else {
             clientesMap.remove(this.nomeCliente);
             remove(this.nomeCliente);
@@ -173,7 +173,7 @@ public class ServerTCP extends Thread {
                     }
                 }
             }
-            saida.println("Usuário Alterado com sucesso!!");
+            saida.println("Usuario alterado com sucesso!!");
  
         }
     }
