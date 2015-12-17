@@ -56,7 +56,7 @@ public class ServerTCP extends Thread {
             PrintStream saida = new PrintStream(this.conexao.getOutputStream());
             this.nomeCliente = entrada.readLine();
             if (armazena(this.nomeCliente)) {
-                saida.println("Este nome ja existe! Conecte novamente com outro nome.");
+                saida.println("Este nome já existe! Conecte novamente com outro nome.");
                 this.conexao.close();
                 return;
             } else {
@@ -102,11 +102,11 @@ public class ServerTCP extends Thread {
                     	if (cmd.length == 2) {
                     		rename(saida, cmd);
 						} else {
-							saida.println("Comando invalido!");
+							saida.println("Comando inválido!");
 						}
                         break;
                     default:
-                        saida.println("Comando invalido!");
+                        saida.println("Comando inválido!");
                     }
                 }
  
@@ -114,7 +114,7 @@ public class ServerTCP extends Thread {
             }
  
         } catch (IOException e) {
-            System.out.println("Falha na Conexao... .. ." + " IOException: " + e);
+            System.out.println("Falha na conexão... .. ." + " IOException: " + e);
         }
     }
  
@@ -145,12 +145,12 @@ public class ServerTCP extends Thread {
                         count++;
                     }
                 } else {
-                    saida.println("Comando invalido!");
+                    saida.println("Comando inválido!");
                 }
             }
         }  
         if(count == clientesMap.size()) {
-            saida.println("O usuario "+msg[2]+" nao existe!");
+            saida.println("O usuário "+msg[2]+" não existe!");
         }
     }
    
@@ -159,7 +159,7 @@ public class ServerTCP extends Thread {
         String novoNome = msg[1];
         String nomeAntigo = nomeCliente;
         if (armazena(novoNome)) {
-            saida.println("Usuario ja cadastrado, tente novamente!!");
+            saida.println("Usuário já cadastrado, tente novamente!");
         } else {
             clientesMap.remove(this.nomeCliente);
             remove(this.nomeCliente);
@@ -173,7 +173,7 @@ public class ServerTCP extends Thread {
                     }
                 }
             }
-            saida.println("Usuario alterado com sucesso!!");
+            saida.println("Usuário alterado com sucesso!");
  
         }
     }

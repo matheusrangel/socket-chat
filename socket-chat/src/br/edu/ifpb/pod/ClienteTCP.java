@@ -45,7 +45,7 @@ public class ClienteTCP extends Thread {
                 saida.println(msg);
             }
         } catch (IOException e) {
-            System.out.println("Falha na Conexao... .. ." + " IOException: " + e);
+            System.out.println("Falha na Conexão... .. ." + " IOException: " + e);
         }
     }
     // execucao da thread
@@ -62,7 +62,7 @@ public class ClienteTCP extends Thread {
                 msg = entrada.readLine();
                 //se a mensagem contiver dados, passa pelo if, caso contrario cai no break e encerra a conexao
                 if (msg == null) {
-                    System.out.println("Conexao encerrada com o bate-papo!");
+                    System.out.println("Conexão encerrada com o bate-papo!");
                     System.exit(0);
                 }
                 //imprime a mensagem recebida
@@ -73,7 +73,7 @@ public class ClienteTCP extends Thread {
             }
         } catch (IOException e) {
             // caso ocorra alguma excecao de E/S, mostra qual foi.
-            System.out.println("Ocorreu uma Falha... .. ." + " IOException: " + e);
+            System.out.println("Ocorreu uma falha... .. ." + " IOException: " + e);
         }
     }
 }
